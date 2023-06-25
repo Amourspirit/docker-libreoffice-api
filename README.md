@@ -1,5 +1,7 @@
 # LibreOffice-API Docker Image
 
+This Version is 7.5 of LibreOffice.
+
 A LibreOffice API docker image
 
 On DockerHub: [dockdock/libreoffice-api](hhttps://hub.docker.com/r/dockdock/libreoffice-api)
@@ -18,3 +20,10 @@ We use same user in all our applications
 | username | dockdock  |
 | uid      | 1000      |
 | gid      | 1000      |
+
+##  Apps
+
+This version of LibreOffice API contains:
+
+- Writer
+- Calc

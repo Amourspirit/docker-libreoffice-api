@@ -44,7 +44,6 @@ RUN apt-get update -qqy \
     && dpkg-reconfigure tzdata \
     && apt-get purge libreoffice-gnome* libreoffice-gtk* libreoffice-help* libreoffice-kde* \
     && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/lib/apt/lists/* \
     && fc-cache -f \
     && groupadd -g 1000 dockdock \
     && useradd --shell /bin/bash -u 1000 -g 1000 -o -c "dockdock base user" -m dockdock
