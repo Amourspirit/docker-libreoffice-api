@@ -4,7 +4,7 @@ This Version is 7.5 of LibreOffice.
 
 A LibreOffice API docker image
 
-On DockerHub: [dockdock/libreoffice-api](hhttps://hub.docker.com/r/dockdock/libreoffice-api)
+On DockerHub: [dockdock/libreoffice-api](https://hub.docker.com/r/dockdock/libreoffice-api)
 
 
 ### Timezone
