@@ -5,9 +5,11 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #ARG LO_PPA=libreoffice-fresh
 ARG LO_PPA=ppa
+ARG USER_ID=1000
+ARG GROUP_ID=1000
 
 LABEL name="Libreoffice-API" \
-    description="A LibreOffice server - LibreOffice API Access" \
+    description="A LibreOffice server - LibreOffice API Access (Calc & Writer only)" \
     maintainer="DockDock"
 
 RUN apt-get update -qqy \
@@ -39,15 +41,15 @@ RUN apt-get update -qqy \
     lbzip2 \
     libsigc++-2.0-0v5 \
     tzdata \
+    software-properties-common \
     && ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
     && echo "UTC" > /etc/timezone \
     && dpkg-reconfigure tzdata \
     && apt-get purge libreoffice-gnome* libreoffice-gtk* libreoffice-help* libreoffice-kde* \
     && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/lib/apt/lists/* \
     && fc-cache -f \
-    && groupadd -g 1000 dockdock \
-    && useradd --shell /bin/bash -u 1000 -g 1000 -o -c "dockdock base user" -m dockdock
+    && groupadd -g $GROUP_ID dockdock \
+    && useradd --shell /bin/bash -u $USER_ID -g $GROUP_ID -o -c "dockdock base user" -m dockdock
 
 EXPOSE 2002
 
