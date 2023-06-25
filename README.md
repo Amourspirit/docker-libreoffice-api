@@ -27,3 +27,17 @@ This version of LibreOffice API contains:
 
 - Writer
 - Calc
+
+## Ports
+
+This version of LibreOffice API expose the port 2002
+
+## Tags
+
+- LO-7.5
+
+## Build
+
+```bash
+docker build -t dockdock/libreoffice-api:LO-7.5 .
+```
