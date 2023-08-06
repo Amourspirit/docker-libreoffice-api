@@ -31,7 +31,7 @@ jobs:
             dockdock/libreoffice-api
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-            ype=raw,value=$LO_MAJOR_MINOR_TAG
+            ype=raw,value=${{ env.LO_MAJOR_MINOR_TAG }}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
