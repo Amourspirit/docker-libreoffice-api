@@ -1,5 +1,4 @@
 FROM ubuntu:22.04
-ENV DEBIAN_FRONTEND noninteractive
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -41,6 +40,7 @@ RUN apt-get update -qqy \
     lbzip2 \
     libsigc++-2.0-0v5 \
     tzdata \
+    enchant-2 \
     software-properties-common \
     && ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
     && echo "UTC" > /etc/timezone \
@@ -50,6 +50,10 @@ RUN apt-get update -qqy \
     && fc-cache -f \
     && groupadd -g $GROUP_ID dockdock \
     && useradd --shell /bin/bash -u $USER_ID -g $GROUP_ID -o -c "dockdock base user" -m dockdock
+
+ENV LC_ALL="en_US.UTF-8" \
+    LC_CTYPE="en_US.UTF-8" \
+    LANG="C.UTF-8"
 
 EXPOSE 2002
 
